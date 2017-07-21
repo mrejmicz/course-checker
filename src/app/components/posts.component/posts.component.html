@@ -1,0 +1,17 @@
+<h2>Posty</h2>
+<table *ngIf="posts" class="table table-hover table-striped table-condensed table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID użytkownika</th>
+        <th>Tytuł</th>
+        <th>Treść</th>
+      </tr>
+    </thead>
+      <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+</table>
