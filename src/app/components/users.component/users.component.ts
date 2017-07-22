@@ -23,8 +23,8 @@ constructor(
     this.dataService.getUsers().then(users => this.users = users);
   }
 
-  userDetails(i: number): void {
-    this.router.navigate(['/users', this.users[i].id]);
+  userDetail(id: number): void {
+    this.router.navigate(['/users', this.users[id].id]);
   }
 
 }

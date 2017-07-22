@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Post } from '../../model/post';
 import { DataService } from '../../services/data.service';
@@ -11,11 +12,17 @@ import { DataService } from '../../services/data.service';
 export class PostsComponent implements OnInit {
   posts: Post[];
 
-  constructor(private dataService: DataService){}
+  constructor(
+    private dataService: DataService,
+    private router: Router
+  ){}
 
   ngOnInit(): void {
     this.dataService.getPosts().then(posts => this.posts = posts);
+  }
 
+  postDetail(id: number): void {
+    this.router.navigate(['/posts', this.posts[id].id]);
   }
 
 }

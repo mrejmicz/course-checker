@@ -7,6 +7,7 @@ import { AppComponent }  from '../components/app.component/app.component';
 import { PostsComponent } from '../components/posts.component/posts.component';
 import { UsersComponent } from '../components/users.component/users.component';
 import { UserDetailComponent } from '../components/user-detail.component/user-detail.component';
+import { PostDetailComponent } from '../components/post-detail.component/post-detail.component';
 
 import { DataService } from '../services/data.service';
 
@@ -26,6 +27,10 @@ import { DataService } from '../services/data.service';
       {
         path: 'users/:id',
         component: UserDetailComponent
+      },
+      {
+        path: 'posts/:id',
+        component: PostDetailComponent
       }
     ])
   ],
@@ -34,7 +39,8 @@ import { DataService } from '../services/data.service';
     AppComponent,
     PostsComponent,
     UsersComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    PostDetailComponent
   ],
   bootstrap:    [ AppComponent ]
 })

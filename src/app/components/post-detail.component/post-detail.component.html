@@ -1,0 +1,12 @@
+<div *ngIf="post">
+  <h2>{{post.userId}}</h2>
+  <div>
+    <label>id: </label>{{post.id}}</div>
+  <div>
+    <label>title: </label>{{post.title}}
+  </div>
+  <div>
+    <label>body: </label>{{post.body}}
+  </div>
+  <button class="btn btn-primary "(click)="goBack()">Back</button>
+</div>

@@ -30,6 +30,10 @@ constructor (private http: Http) {}
     return this.getUsers().then(users => users.find(user => user.id === id));
   }
 
+  getPost(id: number): Promise<Post> {
+    return this.getPosts().then(posts => posts.find(post => post.id === id));
+  }
+
   private handleError(error: any): Promise<any>{
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
