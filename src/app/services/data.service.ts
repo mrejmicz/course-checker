@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import { Post } from '../model/post';
 import { User } from '../model/user';
+import { Currency } from '../model/currency';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -10,6 +11,7 @@ import 'rxjs/add/operator/toPromise';
 export class DataService {
 
 private apiUrl = 'https://jsonplaceholder.typicode.com';
+private nbpApiUrl = 'http://api.nbp.pl/api/exchangerates/';
 constructor (private http: Http) {}
 
   getPosts(): Promise<Post[]> {
@@ -32,6 +34,16 @@ constructor (private http: Http) {}
 
   getPost(id: number): Promise<Post> {
     return this.getPosts().then(posts => posts.find(post => post.id === id));
+  }
+
+  getCurrencies(): any {
+    return this.http.get(this.nbpApiUrl + '/tables/a?format=json')
+                .toPromise()
+                .then(response => {
+                  response.json().rates as Currency[];
+                  console.log(response);
+                })
+                .catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any>{

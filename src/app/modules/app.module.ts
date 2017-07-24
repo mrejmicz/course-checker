@@ -8,6 +8,8 @@ import { PostsComponent } from '../components/posts.component/posts.component';
 import { UsersComponent } from '../components/users.component/users.component';
 import { UserDetailComponent } from '../components/user-detail.component/user-detail.component';
 import { PostDetailComponent } from '../components/post-detail.component/post-detail.component';
+import { CurrenciesComponent } from '../components/currencies.component/currencies.component';
+
 
 import { DataService } from '../services/data.service';
 
@@ -31,6 +33,10 @@ import { DataService } from '../services/data.service';
       {
         path: 'posts/:id',
         component: PostDetailComponent
+      },
+      {
+        path: 'currencies',
+        component: CurrenciesComponent
       }
     ])
   ],
@@ -40,7 +46,8 @@ import { DataService } from '../services/data.service';
     PostsComponent,
     UsersComponent,
     UserDetailComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    CurrenciesComponent
   ],
   bootstrap:    [ AppComponent ]
 })
