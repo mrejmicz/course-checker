@@ -36,13 +36,10 @@ constructor (private http: Http) {}
     return this.getPosts().then(posts => posts.find(post => post.id === id));
   }
 
-  getCurrencies(): any {
+  getCurrencies(): Promise<Currency[]> {
     return this.http.get(this.nbpApiUrl + '/tables/a?format=json')
                 .toPromise()
-                .then(response => {
-                  response.json().rates as Currency[];
-                  console.log(response);
-                })
+                .then(response => response.json()[0].rates as Currency[])
                 .catch(this.handleError);
   }
 

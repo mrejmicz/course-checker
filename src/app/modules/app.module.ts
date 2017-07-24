@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from '../components/app.component/app.component';
 import { PostsComponent } from '../components/posts.component/posts.component';
@@ -17,28 +18,7 @@ import { DataService } from '../services/data.service';
   imports:      [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'posts',
-        component: PostsComponent
-      },
-      {
-        path: 'users',
-        component: UsersComponent
-      },
-      {
-        path: 'users/:id',
-        component: UserDetailComponent
-      },
-      {
-        path: 'posts/:id',
-        component: PostDetailComponent
-      },
-      {
-        path: 'currencies',
-        component: CurrenciesComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [ DataService ],
   declarations: [
