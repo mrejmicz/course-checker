@@ -1,12 +1,22 @@
-<div *ngIf="post">
-  <h2>{{post.userId}}</h2>
-  <div>
-    <label>id: </label>{{post.id}}</div>
-  <div>
-    <label>title: </label>{{post.title}}
-  </div>
-  <div>
-    <label>body: </label>{{post.body}}
-  </div>
+<div *ngIf="post&&user">
+  <table  class="table table-hover table-condensed table-striped table-bordered">
+    <tr (click)="userDetail()">
+      <td>Użytkownik</td>
+      <td>{{user.name}}</td>
+    </tr>
+    <tr>
+      <td>Id postu</td>
+      <td>{{post.id}}</td>
+    </tr>
+    <tr>
+      <td>Tytuł</td>
+      <td>{{post.title}}</td>
+    </tr>
+    <tr>
+      <td>Treść</td>
+      <td>{{post.body}}</td>
+    </tr>
+  </table>
   <button class="btn btn-primary "(click)="goBack()">Back</button>
+  <p>
 </div>

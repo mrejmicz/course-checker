@@ -10,8 +10,10 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataService {
 
-private apiUrl = 'https://jsonplaceholder.typicode.com';
+//private apiUrl = 'https://jsonplaceholder.typicode.com';
+private apiUrl = 'http://localhost:3004';
 private nbpApiUrl = 'http://api.nbp.pl/api/exchangerates/';
+
 constructor (private http: Http) {}
 
   getPosts(): Promise<Post[]> {
@@ -28,11 +30,11 @@ constructor (private http: Http) {}
                 .catch(this.handleError);
   }
 
-  getUser(id: number): Promise<User> {
+  getUser(id: Number): Promise<User> {
     return this.getUsers().then(users => users.find(user => user.id === id));
   }
 
-  getPost(id: number): Promise<Post> {
+  getPost(id: Number): Promise<Post> {
     return this.getPosts().then(posts => posts.find(post => post.id === id));
   }
 

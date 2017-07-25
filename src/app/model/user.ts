@@ -1,22 +1,35 @@
 export class User {
-  id: number;
-  username: string;
-  email: string;
+  id: Number;
+  name: String;
+  username: String;
+  email: String;
   address: {
-    street: string,
-    suite: string,
-    city: string,
-    zipcode: string,
+    street: String,
+    suite: String,
+    city: String,
+    zipcode: String,
     geo: {
-      lat: number,
-      lng: number
+      lat: Number,
+      lng: Number
     }
   }
-  phone: string;
-  website: string;
+  phone: String;
+  website: String;
   company: {
-    name: string,
-    catchPhrase: string,
-    bs: string
+    name: String,
+    catchPhrase: String,
+    bs: String
   }
+
+  constructor (user: User) {
+    this.id = user.id;
+    this.name = user.name;
+    this.username = user.username;
+    this.email = user.email;
+    this.address = user.address;
+    this.phone = user.phone;
+    this.website = user.website;
+    this.company = user.company;
+  }
+
 }

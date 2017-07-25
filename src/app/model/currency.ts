@@ -1,5 +1,5 @@
 export class Currency {
-  currency: string;
-  code: string;
-  mid: number;
+  currency: String;
+  code: String;
+  mid: Number;
 }

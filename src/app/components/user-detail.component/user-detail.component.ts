@@ -24,7 +24,8 @@ constructor (
   ngOnInit(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.dataService.getUser(+params.get('id')))
-      .subscribe(user => this.user = user);
+      .subscribe(user => this.user = new User(user));
+      
   }
 
   goBack(): void {

@@ -1,4 +1,5 @@
-<nav>
+<div class="container">
+<nav class="navbar navbar-inverse bg-primary">
   <a href="#">
     <h1>{{name}}</h1>
   </a>
@@ -6,4 +7,6 @@
   <a routerLink="/users" routerLinkActive="active">Użytkownicy</a>
   <a routerLink="/currencies" routerLinkActive="active">Kursy Walut</a>
 </nav>
+<br>
 <router-outlet></router-outlet>
+<div>
